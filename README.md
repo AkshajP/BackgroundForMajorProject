@@ -21,9 +21,14 @@ Other features that can be extracted:
 
 using the `get_unique_strong_pitches_for_second` function I can get the strongest pitches heard in a second. Next step is to map it to a chord name.
 
-Doubts:
+**Doubts:**
 
 - [ ] get unique strong pitches can produce horrible results when a chord changes in the middle of a second. Giving weird notes that dont add up to a chord. So can I split the audio according to beat-long audiolets instead of second-long audiolets. And would that affect the training of the nueral network later?
 - [ ] what does Chroma graph's one column represent?? Is it 1second/length of song? or is it according to sample rate or some other feature. For ex: If it is 1 second, then I can iterate through data of all columns to get strongest notes heard and map it to some chord
 - [ ] saw mir_effects multiple places. Need to know what that is
-- [ ] Make a chord dictionary to map chords. Like ['E,'B'] should give E5. ['C','E','G'] should give Cmajor and so on.
+- [ ] Find and learn python library to deal with ARFF and club chords
+
+**Progress finished:**
+
+- [x] Make a chord dictionary to map chords. Like ['E,'B'] should give E5. ['C','E','G'] should give Cmajor and so on.
+  - Done in chord mapping.ipynb
