@@ -26,9 +26,16 @@ using the `get_unique_strong_pitches_for_second` function I can get the stronges
 - [ ] get unique strong pitches can produce horrible results when a chord changes in the middle of a second. Giving weird notes that dont add up to a chord. So can I split the audio according to beat-long audiolets instead of second-long audiolets. And would that affect the training of the nueral network later?
 - [ ] what does Chroma graph's one column represent?? Is it 1second/length of song? or is it according to sample rate or some other feature. For ex: If it is 1 second, then I can iterate through data of all columns to get strongest notes heard and map it to some chord
 - [ ] saw mir_effects multiple places. Need to know what that is
-- [ ] Find and learn python library to deal with ARFF and club chords
+- [ ] Find and learn python library to deal with ARFF
+- [ ] Find a way to club the generated chords
+- [ ] What is better for this use case feed forward NN or CNN?
 
 **Progress finished:**
 
 - [x] Make a chord dictionary to map chords. Like ['E,'B'] should give E5. ['C','E','G'] should give Cmajor and so on.
   - Done in chord mapping.ipynb
+
+**Feature Plan:**
+
+- [ ] Add chord transposer option on generation
+- [ ] How should output of the look like? Cause we wont have lyrics of the song provided, so chords need to shown according to timestamps when they get changed. Or have an audio playback option and chords keep changing at the timestamps
