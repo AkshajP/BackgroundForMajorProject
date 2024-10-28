@@ -19,23 +19,49 @@ Other features that can be extracted:
 
 [Librosa Audio Signal Analysis](https://www.youtube.com/watch?v=MhOdbtPhbLU)
 
-using the `get_unique_strong_pitches_for_second` function I can get the strongest pitches heard in a second. Next step is to map it to a chord name.
-
 **Doubts:**
 
-- [ ] get unique strong pitches can produce horrible results when a chord changes in the middle of a second. Giving weird notes that dont add up to a chord. So can I split the audio according to beat-long audiolets instead of second-long audiolets. And would that affect the training of the nueral network later?
-- [ ] what does Chroma graph's one column represent?? Is it 1second/length of song? or is it according to sample rate or some other feature. For ex: If it is 1 second, then I can iterate through data of all columns to get strongest notes heard and map it to some chord
-- [ ] saw mir_effects multiple places. Need to know what that is
-- [ ] Find and learn python library to deal with ARFF
 - [ ] Find a way to club the generated chords
-- [ ] What is better for this use case feed forward NN or CNN?
+- [ ] Find a way to segment the audio when running inference. (Either `librosa.util.sync` or how?) And how will it work without any percussive instrument to give tempo, thus there might not be a valid frame width to follow.
+- [ ] Experiment with deeper and/or residual networks
+- [ ] Understand how and why the `n_fft` parameter is affecting the pcp vectors in preprocessing
+- [ ] Experiment different activations
+- [ ] Read through the CENS paper and go through `libfmp` repo
+
+**Improvements**
+
+- [ ] What I've generated as CSV is actually not CSV. But if i change it there's some more code that needs to change along with it. If time permits, need to refractor the code.
 
 **Progress finished:**
 
 - [x] Make a chord dictionary to map chords. Like ['E,'B'] should give E5. ['C','E','G'] should give Cmajor and so on.
   - Done in chord mapping.ipynb
+- [x] What is better for this use case feed forward NN or CNN?
+
+  There's no point in using CNN. I have fixed dimensional data.
+
+- [x] Understanding the working of used synchronisation
+
+  Instead of thinking of audio as one huge file, take it as beat wide frames since a musical chord is beat dependent and not timestamp (second) dependant. Instead of using `librosa.util.sync` we're taking the median of the chroma_cqt arrays that are generated. This guarantees the size of (12,1) even with or without the audio segment being long enough.
+
+- [x] Find and learn python library to deal with ARFF
+
+  Not particularly required. Just the 7th line onwards the whole file can beb thought to be a csv
 
 **Feature Plan:**
 
 - [ ] Add chord transposer option on generation
 - [ ] How should output of the look like? Cause we wont have lyrics of the song provided, so chords need to shown according to timestamps when they get changed. Or have an audio playback option and chords keep changing at the timestamps
+
+<hr/>
+
+**Note for self:**
+
+`dataset preprocessor.ipynb` is the main file for preproc. First code block is multithreaded by GPT. Second one is single threaded. (Multiprocessing somehow didnt run)
+It needs to be run in my Windows environment.
+
+`model_maker.py/ipynb` is main file for the training and evaluating the model. This is to be run under WSL environment. Probably I'll manage this better making a container later, but for now it works.
+
+`pcp_module.py/ipynb` is made to be used as a module. (Dont delete \_\_init\_\_.py!) (ipynb file was used to try around stuff that worked, py is working)
+
+`pcpvectors` is the directory used to store preproc data as I couldnt have had the patience to wait for a model to be trained just to encounter some error and lose all progress.

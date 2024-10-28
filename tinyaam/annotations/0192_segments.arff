@@ -1,0 +1,18 @@
+@RELATION 'Segment information of 0192'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',83,'D#maj','[Trumpet,Cello,DoubleBassArco]','[MelodyBow,ChordPadsRanged,BassLine]'
+34.698795,'C',133,'Fmin','[Trumpet,ElectricPiano,Balalaika,DoubleBassArco]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+45.525864,'C',133,'Fmin','[Trumpet,ElectricPiano,Balalaika,DoubleBassArco]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+56.352932,'C',133,'Fmin','[Trumpet,ElectricPiano,Balalaika,DoubleBassArco]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+67.18,'C',133,'Fmin','[Trumpet,ElectricPiano,Balalaika,DoubleBassArco]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+78.007065,'C',133,'Fmin','[Trumpet,ElectricPiano,Balalaika,DoubleBassArco]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+88.83413,'A',83,'D#maj','[Trumpet,Cello,DoubleBassArco]','[MelodyBow,ChordPadsRanged,BassLine]'
+123.53293,'end',0,'','[]','[]'

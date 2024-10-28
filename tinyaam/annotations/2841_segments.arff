@@ -1,0 +1,23 @@
+@RELATION 'Segment information of 2841'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',160,'C#maj','[Shakuhachi,AcousticGuitar,ElectricPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+18.0,'D',160,'C#maj','[Clarinet,ElectricGuitarClean,DoubleBassArco,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+30.0,'D',160,'C#maj','[Clarinet,ElectricGuitarClean,DoubleBassArco,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+42.0,'A',160,'C#maj','[Shakuhachi,AcousticGuitar,ElectricPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+60.0,'E',160,'Dmaj','[Viola,AcousticGuitar,BrightPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+66.0,'D',160,'C#maj','[Clarinet,ElectricGuitarClean,DoubleBassArco,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+78.0,'C',160,'C#min','[Shakuhachi,AcousticGuitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+87.0,'C',160,'C#min','[Shakuhachi,AcousticGuitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+96.0,'A',160,'C#maj','[Shakuhachi,AcousticGuitar,ElectricPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+114.0,'B',160,'F#min','[Sitar,DoubleBassArco,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+138.0,'A',160,'C#maj','[Shakuhachi,AcousticGuitar,ElectricPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+156.0,'A',160,'C#maj','[Shakuhachi,AcousticGuitar,ElectricPiano,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+174.0,'end',0,'','[]','[]'

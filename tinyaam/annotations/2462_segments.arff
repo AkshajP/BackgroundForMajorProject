@@ -1,0 +1,17 @@
+@RELATION 'Segment information of 2462'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',60,'Bmaj','[MorinKhuur,ElectricGuitarCrunch,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+32.0,'A',60,'Bmaj','[MorinKhuur,ElectricGuitarCrunch,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+64.0,'C',122,'Bmaj','[Piano,DoubleBassPizz,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+71.86885,'C',122,'Bmaj','[Piano,DoubleBassPizz,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+79.7377,'A',60,'Bmaj','[MorinKhuur,ElectricGuitarCrunch,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+111.7377,'B',60,'Bmin','[Fujara,Piano,DoubleBassPizz]','[MelodyBow,ChordPadsRanged,BassLine]'
+175.7377,'end',0,'','[]','[]'

@@ -1,0 +1,19 @@
+@RELATION 'Segment information of 2395'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',127,'Dmin','[Erhu,Ukulele,OrganBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+22.677166,'A',127,'Dmin','[Erhu,Ukulele,OrganBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+45.354332,'E',127,'Dmin','[Fujara,ElectricPiano,Ukulele,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+68.031494,'E',127,'Dmin','[Fujara,ElectricPiano,Ukulele,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+90.708664,'A',127,'Dmin','[Erhu,Ukulele,OrganBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+113.38583,'A',127,'Dmin','[Erhu,Ukulele,OrganBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+136.063,'C',127,'Dmaj','[Erhu,ElectricPiano,Drums]','[MelodyBow,ChordPadsRanged,RhythmSimpleGrooves]'
+143.62206,'E',127,'Dmin','[Fujara,ElectricPiano,Ukulele,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+166.29922,'end',0,'','[]','[]'

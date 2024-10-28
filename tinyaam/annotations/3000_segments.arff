@@ -1,0 +1,18 @@
+@RELATION 'Segment information of 3000'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',89,'Gmin','[PanFlute,ElectricGuitarClean,Ukulele,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,RhythmSimpleGrooves]'
+43.14607,'C',89,'Gmaj','[PanFlute,ElectricGuitarClean,ElectricPiano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+59.325844,'C',89,'Gmaj','[PanFlute,ElectricGuitarClean,ElectricPiano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+75.505615,'C',89,'Gmaj','[PanFlute,ElectricGuitarClean,ElectricPiano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+91.685394,'C',89,'Gmaj','[PanFlute,ElectricGuitarClean,ElectricPiano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+107.86517,'D',89,'Gmin','[PanFlute,ElectricGuitarClean,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+118.65169,'D',89,'Gmin','[PanFlute,ElectricGuitarClean,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+129.4382,'end',0,'','[]','[]'

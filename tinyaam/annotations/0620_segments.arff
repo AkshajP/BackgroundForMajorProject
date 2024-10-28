@@ -1,0 +1,18 @@
+@RELATION 'Segment information of 0620'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',123,'Dmaj','[Cello,AcousticGuitar,ElectricBass,Drums]','[ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+31.219513,'C',164,'Amin','[ElectricGuitarClean,ElectricBass,Drums]','[ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+48.780487,'A',123,'Dmaj','[Cello,AcousticGuitar,ElectricBass,Drums]','[ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+80.0,'C',164,'Amin','[ElectricGuitarClean,ElectricBass,Drums]','[ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+97.560974,'C',164,'Amin','[ElectricGuitarClean,ElectricBass,Drums]','[ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+115.12195,'B',123,'Amaj','[TenorSax,Cello,AcousticGuitar,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+146.34146,'B',123,'Amaj','[TenorSax,Cello,AcousticGuitar,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+177.56097,'end',0,'','[]','[]'

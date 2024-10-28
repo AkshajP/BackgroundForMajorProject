@@ -1,0 +1,19 @@
+@RELATION 'Segment information of 1941'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',159,'Amin','[Flugelhorn,Cello,AcousticGuitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+18.113207,'D',79,'Amaj','[Flugelhorn,Cello,Sitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+42.417004,'D',79,'Amaj','[Flugelhorn,Cello,Sitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+66.7208,'D',79,'Amaj','[Flugelhorn,Cello,Sitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+91.0246,'B',106,'C#maj','[Flugelhorn,Cello,AcousticGuitar]','[MelodyBow,ChordPadsRanged,ChordArpeggios]'
+118.19441,'D',79,'Amaj','[Flugelhorn,Cello,Sitar,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+142.49821,'C',159,'Bmin','[Flugelhorn,Cello,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+151.55482,'B',106,'C#maj','[Flugelhorn,Cello,AcousticGuitar]','[MelodyBow,ChordPadsRanged,ChordArpeggios]'
+178.72464,'end',0,'','[]','[]'

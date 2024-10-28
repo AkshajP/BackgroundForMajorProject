@@ -1,0 +1,16 @@
+@RELATION 'Segment information of 2720'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',119,'Gmaj','[Trombone,Sitar,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+32.26891,'B',119,'Gmaj','[Trombone,Ukulele,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+64.53782,'A',119,'Gmaj','[Trombone,Sitar,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+96.80673,'B',119,'Gmaj','[Trombone,Ukulele,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+129.07564,'D',158,'Cmin','[Trombone,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+153.37944,'end',0,'','[]','[]'

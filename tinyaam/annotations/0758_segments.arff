@@ -1,0 +1,22 @@
+@RELATION 'Segment information of 0758'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',119,'Amaj','[Trombone,Ukulele,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+12.100841,'C',119,'Amin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+24.201681,'A',119,'Amaj','[Trombone,Ukulele,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+36.30252,'C',119,'Amin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+48.403362,'A',119,'Amaj','[Trombone,Ukulele,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+60.504204,'B',119,'C#maj','[Shakuhachi,ElectricGuitarCrunch,Piano,ElectricBass]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+76.63866,'C',119,'Amin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+88.739494,'C',119,'Amin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+100.84033,'B',119,'C#maj','[Shakuhachi,ElectricGuitarCrunch,Piano,ElectricBass]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+116.974785,'B',119,'C#maj','[Shakuhachi,ElectricGuitarCrunch,Piano,ElectricBass]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine]'
+133.10924,'C',119,'Amin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+145.21008,'end',0,'','[]','[]'

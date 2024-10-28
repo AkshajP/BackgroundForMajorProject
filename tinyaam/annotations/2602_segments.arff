@@ -1,0 +1,19 @@
+@RELATION 'Segment information of 2602'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',121,'Bmin','[Trumpet,ElectricGuitarClean,Drums]','[MelodyBow,ChordPadsRanged,RhythmSimpleGrooves]'
+11.900826,'D',121,'Bmin','[TenorSax,Ukulele,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+19.834711,'A',121,'Bmin','[Trumpet,ElectricGuitarClean,Drums]','[MelodyBow,ChordPadsRanged,RhythmSimpleGrooves]'
+31.735538,'C',121,'Cmaj','[Trumpet,ElectricPiano,Sitar]','[MelodyBow,ChordPadsRanged,ChordArpeggios]'
+63.471077,'A',121,'Bmin','[Trumpet,ElectricGuitarClean,Drums]','[MelodyBow,ChordPadsRanged,RhythmSimpleGrooves]'
+75.3719,'E',121,'Bmaj','[Trumpet,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+107.10744,'C',121,'Cmaj','[Trumpet,ElectricPiano,Sitar]','[MelodyBow,ChordPadsRanged,ChordArpeggios]'
+138.84297,'E',121,'Bmaj','[Trumpet,ElectricGuitarCrunch,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+170.5785,'end',0,'','[]','[]'

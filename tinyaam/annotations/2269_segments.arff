@@ -1,0 +1,16 @@
+@RELATION 'Segment information of 2269'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',79,'D#min','[ElectricGuitarLead,Balalaika,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+48.607594,'D',79,'D#min','[Trombone,ElectricGuitarCrunch,OrganBass,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+72.91139,'E',79,'D#maj','[Violin,AcousticGuitar,Sitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+109.36709,'D',79,'D#min','[Trombone,ElectricGuitarCrunch,OrganBass,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+133.67088,'C',79,'A#min','[Trombone,Sitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+170.12659,'end',0,'','[]','[]'

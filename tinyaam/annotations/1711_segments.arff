@@ -1,0 +1,23 @@
+@RELATION 'Segment information of 1711'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',87,'Fmaj','[Clarinet,AcousticGuitar,Cello,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+11.034483,'C',87,'Amaj','[Clarinet,ElectricGuitarCrunch,OrganBass,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+22.068966,'D',174,'Fmaj','[PanFlute,AcousticGuitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+27.586208,'D',174,'Fmaj','[PanFlute,AcousticGuitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+33.10345,'B',87,'Fmaj','[ElectricGuitarLead,AcousticGuitar,Cello,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+49.655174,'B',87,'Fmaj','[ElectricGuitarLead,AcousticGuitar,Cello,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+66.206894,'B',87,'Fmaj','[ElectricGuitarLead,AcousticGuitar,Cello,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+82.75862,'C',87,'Amaj','[Clarinet,ElectricGuitarCrunch,OrganBass,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+93.793106,'D',174,'Fmaj','[PanFlute,AcousticGuitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+99.31035,'B',87,'Fmaj','[ElectricGuitarLead,AcousticGuitar,Cello,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+115.862076,'D',174,'Fmaj','[PanFlute,AcousticGuitar,OrganBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+121.37932,'C',87,'Amaj','[Clarinet,ElectricGuitarCrunch,OrganBass,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+132.4138,'end',0,'','[]','[]'

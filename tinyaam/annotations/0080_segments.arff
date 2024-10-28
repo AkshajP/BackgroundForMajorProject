@@ -1,0 +1,16 @@
+@RELATION 'Segment information of 0080'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',163,'A#min','[AltoSax,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+17.66871,'A',163,'A#min','[AltoSax,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+35.33742,'A',163,'A#min','[AltoSax,Piano,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+53.006134,'B',81,'C#maj','[ElectricBass,Drums]','[BassLine,RhythmSimpleGrooves]'
+100.41354,'C',108,'A#min','[AltoSax,Piano,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+127.08021,'end',0,'','[]','[]'

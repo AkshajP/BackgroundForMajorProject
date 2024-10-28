@@ -1,0 +1,16 @@
+@RELATION 'Segment information of 0989'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',120,'Amin','[MorinKhuur,BrightPiano,Cello,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+32.0,'A',120,'Amin','[MorinKhuur,BrightPiano,Cello,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+64.0,'C',120,'Bmaj','[MorinKhuur,AcousticGuitar,DoubleBassPizz]','[MelodyBow,ChordPadsRanged,BassLine]'
+96.0,'A',120,'Amin','[MorinKhuur,BrightPiano,Cello,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+128.0,'A',120,'Amin','[MorinKhuur,BrightPiano,Cello,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+160.0,'end',0,'','[]','[]'

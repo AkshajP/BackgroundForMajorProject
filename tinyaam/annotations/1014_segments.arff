@@ -1,0 +1,19 @@
+@RELATION 'Segment information of 1014'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',134,'Fmaj','[ElectricPiano,DoubleBassPizz,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+28.656717,'A',134,'Fmaj','[ElectricPiano,DoubleBassPizz,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+57.313435,'B',134,'Fmaj','[Flute,BrightPiano,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+68.0597,'C',89,'Fmin','[Flute,BrightPiano,ElectricGuitarClean,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+89.63274,'C',89,'Fmin','[Flute,BrightPiano,ElectricGuitarClean,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+111.20577,'A',134,'Fmaj','[ElectricPiano,DoubleBassPizz,Drums]','[ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+139.86249,'D',134,'F#min','[Flute,BrightPiano,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+154.19084,'B',134,'Fmaj','[Flute,BrightPiano,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+164.9371,'end',0,'','[]','[]'

@@ -1,0 +1,17 @@
+@RELATION 'Segment information of 1050'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',108,'Bmin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+35.555557,'B',108,'Bmin','[Fujara,ElectricGuitarClean,ElectricBass]','[MelodyBow,ChordArpeggios,BassLine]'
+48.88889,'A',108,'Bmin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+84.44444,'A',108,'Bmin','[Shakuhachi,ElectricGuitarCrunch,ElectricBass]','[MelodyBow,ChordPadsRanged,BassLine]'
+120.0,'D',144,'Bmaj','[Fujara,Cello,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+140.0,'D',144,'Bmaj','[Fujara,Cello,ElectricBass,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+160.0,'end',0,'','[]','[]'

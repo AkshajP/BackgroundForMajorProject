@@ -1,0 +1,20 @@
+@RELATION 'Segment information of 2990'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',119,'A#min','[Flute,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+24.201681,'D',119,'Bmaj','[Flute,ElectricGuitarCrunch,BrightPiano,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+32.26891,'E',119,'Dmin','[Shakuhachi,Ukulele,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+64.53782,'C',119,'A#maj','[Flute,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+80.67227,'C',119,'A#maj','[Flute,AcousticGuitar,DoubleBassPizz,Drums]','[MelodyBow,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+96.806725,'B',158,'A#min','[Flute,ElectricGuitarCrunch,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+115.03458,'D',119,'Bmaj','[Flute,ElectricGuitarCrunch,BrightPiano,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,BassLine,RhythmSimpleGrooves]'
+123.10181,'E',119,'Dmin','[Shakuhachi,Ukulele,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+155.37071,'B',158,'A#min','[Flute,ElectricGuitarCrunch,DoubleBassPizz,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+173.59856,'end',0,'','[]','[]'

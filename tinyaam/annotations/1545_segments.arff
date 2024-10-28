@@ -1,0 +1,15 @@
+@RELATION 'Segment information of 1545'
+
+@ATTRIBUTE 'Start time in seconds' NUMERIC
+@ATTRIBUTE 'Mark' STRING
+@ATTRIBUTE 'Tempo' NUMERIC
+@ATTRIBUTE 'Key' STRING
+@ATTRIBUTE 'Instruments' STRING
+@ATTRIBUTE 'Generator' STRING
+
+@DATA
+0.0,'A',106,'Gmaj','[TenorSax,AcousticGuitar,DoubleBassArco]','[MelodyBow,ChordPadsRanged,BassLine]'
+36.226414,'B',106,'G#maj','[TenorSax,ElectricGuitarClean,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+72.45283,'B',106,'G#maj','[TenorSax,ElectricGuitarClean,DoubleBassArco,Drums]','[MelodyBow,ChordPadsRanged,BassLine,RhythmSimpleGrooves]'
+108.679245,'D',106,'D#maj','[TenorSax,BrightPiano,Cello,Drums]','[MelodyBow,ChordPadsRanged,ChordArpeggios,RhythmSimpleGrooves]'
+144.90565,'end',0,'','[]','[]'
