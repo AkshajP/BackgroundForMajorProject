@@ -7,33 +7,41 @@ from tensorflow.keras.layers import Dense, BatchNormalization, Dropout, InputLay
 from model_maker import create_ffnn_model
 from pcp_module import pcp_vectorise_segment
 from itertools import groupby
-from operator import itemgetter
+import logging
+import warnings
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress all logs except errors
-tf.get_logger().setLevel('ERROR') 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # 0=all, 1=info, 2=warning, 3=error
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'   # Specify GPU device
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
+
+# Suppress NUMA warnings
+os.environ['TF_CPP_NUMA_POLICY'] = '0'    # Disable NUMA warnings
+
+# Configure Python logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+logging.getLogger('PIL').setLevel(logging.ERROR)
+logging.getLogger('matplotlib').setLevel(logging.ERROR)
+
+# Disable all warnings
+warnings.filterwarnings('ignore')
+
+# Suppress TensorFlow logging even further
+tf.get_logger().setLevel('ERROR')
+tf.autograph.set_verbosity(0)
+
+# Optional: Suppress specific NVIDIA/CUDA warnings if they appear
+os.environ['NVIDIA_TF32_OVERRIDE'] = '0'
 
 def load_trained_model(model_path):
     """
-    Load a pre-trained neural network model for chord prediction.
-
-    Attempts to load a complete model first (architecture + weights + optimizer state).
-    If that fails, creates a new model and loads just the weights.
-    Finally recompiles the model for inference only.
-
-    Args:
-        model_path (str): Path to the saved model file (.h5 format)
-
-    Returns:
-        tensorflow.keras.Model: Loaded and compiled model ready for inference
-
-    Raises:
-        OSError: If the model file cannot be found
-        ValueError: If the model architecture is incompatible with saved weights
+    Load the model with trained weights.
+    For inference, we only need the model architecture and weights, not the optimizer state.
     """
     try:
+        # First try to load as a complete model
         model = load_model(model_path)
     except:
-        # If loading the model fails, create new model and load just the weights
+        # If that fails, create new model and load just the weights
         model = create_ffnn_model()
         # Load weights without optimizer state
         model.load_weights(model_path, by_name=True, skip_mismatch=True)
@@ -45,79 +53,40 @@ def load_trained_model(model_path):
 
 def predict_chord(pcp_vector, model):
     """
-    Convert a Pitch Class Profile vector into a predicted chord using the trained model.
-
-    Args:
-        pcp_vector (numpy.ndarray): A 12-dimensional PCP vector representing 
-            the harmonic content of an audio segment
-        model (tensorflow.keras.Model): Trained chord prediction model
-
-    Returns:
-        str: Predicted chord label (e.g., 'Cmaj', 'Amin', etc.)
-
-    Note:
-        The PCP vector should be normalized and extracted using standard parameters
-        to match the training data characteristics.
+    Predict chord from PCP vector using the trained model
+    Returns the predicted chord label
     """
     chord_list = ['Cmaj', 'Cmin', 'C#maj', 'C#min', 'Dmaj', 'Dmin', 'D#maj', 'D#min', 
                   'Emaj', 'Emin', 'Fmaj', 'Fmin', 'F#maj', 'F#min', 'Gmaj', 'Gmin', 
                   'G#maj', 'G#min', 'Amaj', 'Amin', 'A#maj', 'A#min', 'Bmaj', 'Bmin']
     
+    # Reshape PCP vector for model input
     pcp_vector = np.array(pcp_vector).reshape(1, -1)
+    
+    # Get model prediction
     prediction = model.predict(pcp_vector, verbose=0)
     chord_index = np.argmax(prediction)
     
     return chord_list[chord_index]
 
 def apply_audio_filters(audio_data, sr):
-    """
-    Apply preprocessing filters to clean the audio signal for improved chord detection.
-
-    Performs:
-    1. Preemphasis filtering to boost high frequencies
-    2. Harmonic-Percussive Source Separation (HPSS) to isolate harmonic content
-
-    Args:
-        audio_data (numpy.ndarray): Raw audio signal
-        sr (int): Sampling rate of the audio in Hz
-
-    Returns:
-        numpy.ndarray: Filtered audio signal optimized for chord detection
-
-    Note:
-        The filtered signal maintains the same sampling rate and length as the input.
-    """
+    """Apply audio filters to clean the signal"""
     # Apply a bandpass filter (keeping frequencies between 50Hz and 2000Hz)
     y_filtered = librosa.effects.preemphasis(audio_data)
-
+    
+    # Apply HPSS (Harmonic-Percussive Source Separation)
     y_harmonic, _ = librosa.effects.hpss(y_filtered)
     
     return y_harmonic
 
 def group_consecutive_chords(times, chords):
-    """
-    Group consecutive segments with the same chord prediction into longer segments.
-
-    Args:
-        times (numpy.ndarray): Array of timestamps marking segment boundaries in seconds
-        chords (list): List of chord predictions corresponding to the segments 
-            between consecutive timestamps
-
-    Returns:
-        list: List of tuples (start_time, end_time, chord) where consecutive 
-            segments with the same chord have been merged
-
-    Example:
-        >>> times = [0, 0.5, 1.0, 1.5]
-        >>> chords = ['Cmaj', 'Cmaj', 'Amin']
-        >>> group_consecutive_chords(times, chords)
-        [(0, 1.0, 'Cmaj'), (1.0, 1.5, 'Amin')]
-    """
+    """Group consecutive identical chords and their time intervals"""
     grouped_segments = []
     
     # Create pairs of (time, chord)
     chord_segments = list(zip(times[:-1], times[1:], chords))
     
+    # Group by chord
     for chord, group in groupby(chord_segments, key=lambda x: x[2]):
         group_list = list(group)
         start_time = group_list[0][0]
@@ -128,32 +97,17 @@ def group_consecutive_chords(times, chords):
 
 def infer_chords(audio_file, model_weights_path):
     """
-    Process an audio file to detect and predict its chord progression.
-
-    Workflow:
-    1. Loads and preprocesses the audio file
-    2. Detects beats and generates half-beat segments
-    3. Applies audio filtering to each segment
-    4. Extracts PCP vectors and predicts chords
-    5. Groups consecutive identical chord predictions
-
-    Args:
-        audio_file (str): Path to the input audio file
-        model_weights_path (str): Path to the saved model weights
-
-    Returns:
-        list: List of tuples (start_time, end_time, chord) representing 
-            the detected chord progression
-
-    Raises:
-        FileNotFoundError: If audio_file or model_weights_path doesn't exist
-        RuntimeError: If beat detection or chord prediction fails
+    Main inference function that processes audio and returns chord predictions
     """
+    # Load the audio file
     print(f"Loading audio file: {audio_file}")
     y, sr = librosa.load(audio_file)
     
+    # Get tempo and beat frames
     tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
     print(f"Detected tempo: {tempo} BPM")
+    
+    # Convert beat frames to time
     beat_times = librosa.frames_to_time(beat_frames, sr=sr)
     
     # Generate half-beat times by interpolating between beats
@@ -165,8 +119,11 @@ def infer_chords(audio_file, model_weights_path):
         half_beat_times.extend([start_time, mid_time])
     # Add the last beat time
     half_beat_times.append(beat_times[-1])
+    
+    # Convert to numpy array for easier handling
     times = np.array(half_beat_times)
-
+    
+    # Load trained model
     model = load_trained_model(model_weights_path)
     
     # Process each segment
@@ -174,24 +131,31 @@ def infer_chords(audio_file, model_weights_path):
     for i in range(len(times) - 1):
         start_time = times[i]
         end_time = times[i + 1]
+        
+        # Convert times to sample indices
         start_idx = int(start_time * sr)
         end_idx = int(end_time * sr)
         
+        # Extract segment
         segment = y[start_idx:end_idx]
         
+        # Apply filters
         filtered_segment = apply_audio_filters(segment, sr)
         
+        # Get PCP vector
         pcp_vector_str = pcp_vectorise_segment(filtered_segment, sr, f"segment_{start_time}")
         pcp_vector = [float(x) for x in pcp_vector_str.strip('[]').split(',')]
         
+        # Predict chord
         chord = predict_chord(pcp_vector, model)
         predictions.append(chord)
     
+    # Group consecutive identical chords
     grouped_segments = group_consecutive_chords(times, predictions)
     
     return grouped_segments
 
-def format_time(seconds: float):
+def format_time(seconds):
     """Format time in seconds to MM:SS.mmm"""
     minutes = int(seconds // 60)
     seconds_remainder = seconds % 60
