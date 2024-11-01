@@ -96,6 +96,7 @@ def train_model(X_train, y_train, epochs=100, batch_size=32):
         verbose=1
     )
     
+    model.save('model.h5')
     return model, history
 
 

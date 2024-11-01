@@ -2,3 +2,7 @@ modifications/
 pcpvectorssinglethreaded/
 __pycache__/
 pcpvectors/
+*.keras
+*.mp3
+*.h5
+/full dataset/
