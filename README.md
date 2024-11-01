@@ -21,8 +21,6 @@ Other features that can be extracted:
 
 **Doubts:**
 
-- [ ] Find a way to club the generated chords
-- [ ] Find a way to segment the audio when running inference. (Either `librosa.util.sync` or how?) And how will it work without any percussive instrument to give tempo, thus there might not be a valid frame width to follow.
 - [ ] Experiment with deeper and/or residual networks
 - [ ] Understand how and why the `n_fft` parameter is affecting the pcp vectors in preprocessing
 - [ ] Experiment different activations
@@ -48,20 +46,23 @@ Other features that can be extracted:
 
   Not particularly required. Just the 7th line onwards the whole file can beb thought to be a csv
 
+- [x] Find a way to club the generated chords
+- [x] Find a way to segment the audio when running inference. (Either `librosa.util.sync` or how?) And how will it work without any percussive instrument to give tempo, thus there might not be a valid frame width to follow.
+
 **Feature Plan:**
 
-- [ ] Add chord transposer option on generation
+- [ ] Add chord transposer option on generation (in UI)
 - [ ] How should output of the look like? Cause we wont have lyrics of the song provided, so chords need to shown according to timestamps when they get changed. Or have an audio playback option and chords keep changing at the timestamps
 
 <hr/>
 
 **Note for self:**
 
-`dataset preprocessor.ipynb` is the main file for preproc. First code block is multithreaded by GPT. Second one is single threaded. (Multiprocessing somehow didnt run)
+`dataset preprocessor.ipynb` is the main file for preproc. First code block is multiprocessed (best). Second one is multi threaded. Last is single threaded.
 It needs to be run in my Windows environment.
 
-`model_maker.py/ipynb` is main file for the training and evaluating the model. This is to be run under WSL environment. Probably I'll manage this better making a container later, but for now it works.
+`model_maker.py` is main file for the training and evaluating the model. This is to be run under WSL environment. Probably I'll manage this better making a container later, but for now it works.
 
-`pcp_module.py/ipynb` is made to be used as a module. (Dont delete \_\_init\_\_.py!) (ipynb file was used to try around stuff that worked, py is working)
+`pcp_module.py` is made to be used as a module. (Dont delete \_\_init\_\_.py!) (ipynb file was used to try around stuff that worked, py is working)
 
 `pcpvectors` is the directory used to store preproc data as I couldnt have had the patience to wait for a model to be trained just to encounter some error and lose all progress.
