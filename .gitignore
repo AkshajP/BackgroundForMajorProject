@@ -6,3 +6,4 @@ pcpvectors/
 *.mp3
 *.h5
 /full dataset/
+/mfccvectors/

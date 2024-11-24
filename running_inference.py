@@ -162,8 +162,8 @@ def format_time(seconds):
     return f"{minutes:02d}:{seconds_remainder:06.3f}"
 
 if __name__ == "__main__":
-    audio_file = "0001_infer.mp3"
-    model_weights_path = "model.h5"
+    audio_file = "infer3.mp3"
+    model_weights_path = "pcpmodel_1000.h5"
     
     # Run inference
     chord_segments = infer_chords(audio_file, model_weights_path)

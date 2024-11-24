@@ -45,6 +45,7 @@ def pcp_vectorise_segment(segment, sr, filename):
         chromagram = librosa.feature.chroma_cqt(
             y=y_harmonic,
             sr=sr,
+            n_chroma=12
             #norm=None  # Keep the original magnitude
         )
         

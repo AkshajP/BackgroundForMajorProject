@@ -24,7 +24,7 @@ def process_audio(audio_file):
             os.makedirs(os.path.dirname(temp_path), exist_ok=True)
         
         # Process the audio file
-        model_weights_path = "model.h5"  # Ensure this path is correct
+        model_weights_path = "pcpmodel after training on 1000 files.h5"  # Ensure this path is correct
         chord_segments = infer_chords(temp_path, model_weights_path)
         
         # Format the results

@@ -5,6 +5,7 @@ from tensorflow.keras.optimizers import Adam
 import os
 import numpy as np
 
+inputshape = 12 # 12 for pcp, 30 for mfcc
 def parse_file(content):
     x_data=[]
     y_data=[]
@@ -17,7 +18,7 @@ def parse_file(content):
             try:
                 x_array = [int(x) for x in arrays[0].split(',')]
                 y_array = [float(x) for x in arrays[1].split(',')]
-                if len(x_array) == 24 and len(y_array) == 12:
+                if len(x_array) == 24 and len(y_array) == inputshape:
                     x_data.append(x_array)
                     y_data.append(y_array)
             except (ValueError, IndexError):
@@ -44,17 +45,18 @@ def create_ffnn_model():
     Creates a Feed-Forward Neural Network model for predicting 
     24 float values from 12 input values
     """
+    
     model = Sequential([
-        InputLayer(shape=(12,)),
+        InputLayer(input_shape=(inputshape,)),
 
-        Dense(24, activation='relu'),
+        Dense(inputshape*2, activation='relu'),
         BatchNormalization(),
         
-        Dense(48, activation='relu'),
+        Dense(inputshape*4, activation='relu'),
         BatchNormalization(),
         Dropout(0.2),
         
-        Dense(48, activation='relu'),
+        Dense(inputshape*4, activation='relu'),
         BatchNormalization(),
         Dropout(0.2),
         
@@ -96,7 +98,7 @@ def train_model(X_train, y_train, epochs=100, batch_size=32):
         verbose=1
     )
     
-    model.save('model.h5')
+    model.save('mfccmodel_for_1000files.h5')
     return model, history
 
 
@@ -117,7 +119,7 @@ def evaluate_model(model, X_test, y_test):
 
 
 if __name__ == '__main__':
-    data_folder = "pcpvectors"
+    data_folder = "extracted_mfcc_annotations"
     # y, X for maintaining convention from this point onwards
     y, X = load_data_from_folder(data_folder) 
 
@@ -128,7 +130,16 @@ if __name__ == '__main__':
     batch_size = min(32, int(np.sqrt(len(X))))
     print(batch_size)
     print("\nTraining model...")
-    model, history = train_model(X,y, epochs=100, batch_size=batch_size)
+    train_ratio = 0.8
+    train_size = int(len(X) * train_ratio)
 
+    # Shuffle and split
+    indices = np.random.permutation(len(X))
+    train_indices, test_indices = indices[:train_size], indices[train_size:]
+
+    X_train, X_test = X[train_indices], X[test_indices]
+    y_train, y_test = y[train_indices], y[test_indices]
+    model, history = train_model(X_train,y_train, epochs=100, batch_size=batch_size)
+    
     print("\nEvaluating model...")
-    evaluate_model(model, X, y)
+    evaluate_model(model, X_test,y_test)
